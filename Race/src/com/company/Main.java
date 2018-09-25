@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
         Account a1 = new Account();
-        a1.setAmount(100500);
+        a1.addAmount(100500);
         Account a2 = new Account();
         transaction(a1, a2, 500);
         System.out.println("Account 1: " + a1.getAmount());
@@ -14,8 +14,8 @@ public class Main {
 
     private static void transaction (Account from, Account to, int quantity) {
         if (from.getAmount() >= quantity) {
-            from.setAmount(from.getAmount() - quantity);
-            to.setAmount(to.getAmount() + quantity);
+            from.deductAmount(quantity);
+            to.addAmount(quantity);
         } else {
             System.out.println("Not enough money");
         }

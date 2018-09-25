@@ -7,7 +7,11 @@ public class Account {
         return Amount;
     }
 
-    public void setAmount(int amount) {
-        Amount = amount;
+    public void addAmount(int amount) {
+        this.Amount += amount;
+    }
+
+    public void deductAmount(int amount) {
+        this.Amount -= amount;
     }
 }
